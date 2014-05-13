@@ -4,6 +4,7 @@ class LoginPage < ActiveRecord::Base
   scope :sorted, lambda {order("login_pages.position ASC")}
   scope :newest_first, lambda {order("login_pages.created_at DESC")}
   EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
+  PASSWORD_REGEX = /\A[a-zA-Z0-9]+\Z/
   FORBIDDEN_USERNAMES = ['littlebopeep','humptydumpty','marymary']
   validates_presence_of :name, :user_id,:password
    
@@ -13,6 +14,9 @@ class LoginPage < ActiveRecord::Base
                     :length => { :maximum => 100 },
                     :format => EMAIL_REGEX,
                     :confirmation => true
-  validates :user_id, :numericality => true  
-  validates :mobile, :numericality => true       
+  validates :user_id, :numericality => true 
+  validates :mobile, :numericality => true 
+                       
+  validates :password, :format => PASSWORD_REGEX    
+                       
 end
