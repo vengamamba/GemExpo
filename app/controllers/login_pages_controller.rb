@@ -1,6 +1,5 @@
 class LoginPagesController < ApplicationController
-  # before_action :set_login_page, only: [:show, :edit, :update, :destroy]
-  layout "parv"
+  layout "project"
   
   def index
     @login_pages = LoginPage.all
@@ -24,23 +23,18 @@ class LoginPagesController < ApplicationController
      if @login_page.save
         flash[:notice]= "Login Page created successfully."
         redirect_to(:action=>'index')
-      else
+     else
         render('new')
-      end
+     end
   end
  
   def update
-   # puts "I am in danger"
     @login_page = LoginPage.find(params[:id])
       if @login_page.update_attributes(login_page_params)
-        # redirect_to(:action => 'index', :id =>  @login_page.id)
         flash[:notice]="Login page updated successfully"
         redirect_to(:action => 'index')
-        # format.html { redirect_to @login_page, notice: 'Login page was successfully updated.' }
-        # format.json { head :no_content }
       else
         render('edit')
-        # format.json { render json: @login_page.errors, status: :unprocessable_entity }
       end
   end
   
@@ -49,7 +43,6 @@ class LoginPagesController < ApplicationController
   end
  
   def destroy
-    #puts "entered destroy method"
     login_page = LoginPage.find(params[:id]).destroy
     flash[:notice]="Login page destroyed successfully"
     redirect_to(:action => 'index')
