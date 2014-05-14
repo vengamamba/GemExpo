@@ -1,9 +1,9 @@
 development:
   adapter: mysql2
-  database: demo
+  database: rails_cms
   pool: 5
-  username: username
-  password: password
+  username: vengamamba
+  password: vsspl
   timeout: 5000
 
 test:
@@ -15,9 +15,6 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
-  database: demo
+  adapter: postgresql
   pool: 5
-  username: username
-  password: password
   timeout: 5000

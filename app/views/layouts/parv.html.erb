@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Parveen & Vengamamba are doing simple_form | <%= @page_title || "Parveen & Vengamamba" %></title>   
+<%= stylesheet_link_tag    "parv", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>   
+</head>
+<body bgcolor="#F37D0F">
+    <div class="section">
+        <div id="header">
+            <h1>SIMPLE_FORM by Parveen & Vengamamba</h1>
+            <h2>Parveen Task:-  Show & Create --- Vengamamba Task:-  Edit & Delete </h2>
+         </div>
+    
+        <div id="main">
+            <% if !flash[:notice].blank? %>
+            
+            <div class="notice">
+               <marquee style="color:#008000; font-family:verdana; font-weight:bold;
+                scroll="continuous" behavior="alternate"><%= flash[:notice] %></marquee>
+            </div>
+            <% end %>
+            
+            <div id="content">
+                <%= yield %>
+             </div>
+        </div>
+    
+        <div id="footer" >
+            <br/>
+           <marquee behavior="alternate" ><p id="copyright" >&copy; Vengamamba.com / Vengamamba M</p></marquee>  
+        </div>
+    </div>
+</body>
+</html>
