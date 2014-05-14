@@ -13,7 +13,7 @@ a, a:visited { color: #993120; }
 a:hover {}
 b {text-align: center;}
 #footer { clear: both; height: 6.5em; background: #4C2516 ;color: #F2DC87; }
-#footer p { margin: 0; padding: 0.5em 1em;color: #F37D0F; }
+#footer p { margin: 0; padding: 0.5em 1em;color: #F37D0F; float: right }
 
 #header{  height: 7.5em; background: #4C2516 ;color: #F2DC87; }
 #header h1,h2 { margin: 0; padding: 0.5em 1em; text-align: center; color:#F37D0F; }
